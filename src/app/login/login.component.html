@@ -1,0 +1,18 @@
+<h3 class="display-2">ログイン</h3>
+    <igx-snackbar #usersnackbar></igx-snackbar>
+    <igx-snackbar #passsnackbar></igx-snackbar>
+    <igx-snackbar #errorsnackbar></igx-snackbar>
+<form>
+    <div class="mb-3">
+        <label class="form-label" for="username">ユーザ名</label>
+        <input type="text"  name="username" class="form-control" id="username" [(ngModel)]="this.user.userName">
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label" for="password">パスワード</label>
+        <input type="password"  name="password" class="form-control h1" id="password" [(ngModel)]="this.user.password">
+    </div>
+    <div style="text-align: right;">
+        <app-button class="resButton" (click)="sendUserInfo()">ログイン</app-button>
+    </div>
+</form>

@@ -1,0 +1,48 @@
+._sticky{
+    position: sticky;
+    background-color: white;
+    left:0;
+}
+h3{
+    border-bottom: 1px solid rgb(212, 208, 208);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.table-container{
+    overflow: scroll;
+    height: 600px;
+    width:90%;
+    margin:20px auto;
+    border: 1px solid rgba(81, 80, 80, 0.507);
+    z-index: 2;
+}
+thead{
+    z-index: 2;
+}
+.contents{
+    margin-right: 50px;
+}
+.contents-container{
+    margin-bottom: 10px;
+    display:flex;
+}
+@media screen and (max-width: 599px) {
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .table-container{
+        height: 550px ;
+    }
+    .res-button{
+        margin-top: auto;
+    }
+    .contents{
+        margin-right: 20px;
+    }
+    .contents-container{
+        position: relative;
+    }
+}

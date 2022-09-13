@@ -1,0 +1,6 @@
+
+@media screen and (max-width: 599px) {
+    select{
+        width:100%;
+    }
+}

@@ -1,0 +1,25 @@
+<igx-snackbar #yearSnackbar></igx-snackbar>
+<igx-snackbar #systemSnackbar></igx-snackbar>
+<h3>鍵足チャート照会</h3>
+<div class="contents-container">
+    <label class="contents">年<app-drop-down [items]="yearList" [(model)]="year"></app-drop-down></label>
+    <label class="contents">システム<app-drop-down [items]="codeList" [(model)]="systemId"></app-drop-down></label>
+    <app-button class="contents res-button" (click)="getFootkeyChart()">表示</app-button>
+</div>
+<div [hidden]="this.footkeyChart==undefined" class="canvas-container">
+    <ng-container *ngIf="this.footkeyChart!=undefined">
+        <div class="_sticky xlbel-container" [style.width.px]="this.footkeyChart.xSize+50">
+            <label class="label-contents" *ngFor="let label of this.footkeyChart.xLabelList" [style.left.px]="label.labelPoint+50">
+                {{label.label}}
+            </label>
+        </div>
+        <div class="_sticky ylbel-container" [style.height.px]="this.footkeyChart.ySize">
+            <label class="label-contents" *ngFor="let label of this.footkeyChart.yLabelList" [style.top.px]="label.labelPoint">
+                {{label.label}}
+            </label>
+        </div>
+    </ng-container>
+    <div class="canvas-wrapper">
+        <canvas #footkeyCanvas [height]="height" [width]="width"></canvas>
+    </div>
+</div>

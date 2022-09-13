@@ -1,0 +1,59 @@
+h3{
+    border-bottom: 1px solid rgb(212, 208, 208);
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+thead{
+    background-color: white;
+}
+.table-container{
+    overflow: scroll;
+    height: 600px;
+    width:90%;
+    margin:20px auto;
+    border: 1px solid rgba(81, 80, 80, 0.507);
+}
+table{
+    width:1500px;
+    font-size:10px;
+}
+table th{
+    width:50px;
+    white-space: nowrap;
+}
+thead{
+    z-index: 2;
+}
+._sticky{
+    position: sticky;
+    background-color: white;
+    left:0;
+}
+.contents{
+    margin-right: 50px;
+}
+.contents-container{
+    margin-bottom: 10px;
+    display:flex;
+    position: relative;
+}
+@media screen and (max-width: 599px) {
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .table-container{
+        height: 550px;
+    }
+    .table-container table{
+        font-size:10px;
+    }
+    .contents{
+        margin-right: 20px;
+    }
+    .res-button{
+        margin-top: auto;
+    }
+}

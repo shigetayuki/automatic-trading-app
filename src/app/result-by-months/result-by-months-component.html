@@ -1,0 +1,54 @@
+<igx-snackbar #yearSnackbar></igx-snackbar>
+<igx-snackbar #monthSnackbar></igx-snackbar>
+<h3>年月別取引結果照会</h3>
+<div class="contents-container">
+    <label class="contents">年<app-drop-down [items]="yearList" [(model)]="year"></app-drop-down></label>
+    <label class="contents">月<app-drop-down [items]="monthList" [(model)]="month"></app-drop-down></label>
+    <app-button class="contents res-button" (click)="getMapList()">表示</app-button>
+</div>
+<div *ngIf="mxList[0]!=undefined" class="table-container">
+    <table class="table table-hover">
+        <thead class="sticky-top bg-white">
+            <tr>
+                <th class="_sticky" rowspan="2">ID</th>
+                <th rowspan="2">日付</th>
+                <th rowspan="2">時間</th>
+                <th rowspan="2">価格</th>
+                <th rowspan="2"></th>
+                <th rowspan="2">山ID</th>
+                <th rowspan="2">谷ID</th>
+                <th *ngFor="let system of systemList" colspan="3">{{system}}</th>
+            </tr>
+            <tr>
+                <ng-container *ngFor="let system of systemList">
+                    <th>シグナル</th>
+                    <th>収益</th>
+                    <th>前ID</th>
+                </ng-container>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of mxList">
+                <td class="_sticky">{{item.fkId}}</td>
+                <td>{{item.fkDate}}</td>
+                <td>{{item.fkTime}}</td>
+                <td>{{item.price}}</td>
+                <td><app-trend-svg [trend]="item.trend"></app-trend-svg></td>
+                <td>{{item.mountain}}</td>
+                <td>{{item.valley}}</td>
+                <td>{{item.fkSign}}</td>
+                <td>{{item.fkInterest}}</td>
+                <td>{{item.fkPrevOrderLocation}}</td>
+                <td>{{item.fsSign}}</td>
+                <td>{{item.fsInterest}}</td>
+                <td>{{item.fsPrevOrderLocation}}</td>
+                <td>{{item.refkSign}}</td>
+                <td>{{item.refkInterest}}</td>
+                <td>{{item.refkPrevOrderLocation}}</td>
+                <td>{{item.mxSign}}</td>
+                <td>{{item.mxInterest}}</td>
+                <td>{{item.mxPrevOrderLocation}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

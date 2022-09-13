@@ -1,0 +1,4 @@
+<select [(ngModel)]="model" (ngModelChange)="onDropDownChange(model)">
+    <option></option>
+    <option *ngFor="let item of items" [ngValue]="item.codeSymbol">{{ item.codeName }}</option>
+</select>

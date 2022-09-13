@@ -1,0 +1,18 @@
+h3{
+    border-bottom: 1px solid rgb(212, 208, 208);
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+input{
+    font-size: large;
+}
+@media screen and (max-width: 599px) {
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    input{
+        font-size: large;
+    }
+}

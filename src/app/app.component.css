@@ -1,0 +1,11 @@
+article{
+    margin-top: 80px;
+    padding:0 5%;
+}
+
+@media screen and (max-width: 599px) {
+    .resButton{
+        width:100%;
+    }
+
+}

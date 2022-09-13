@@ -1,0 +1,71 @@
+h3{
+    border-bottom: 1px solid rgb(212, 208, 208);
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    font-size: 25px;
+}
+.canvas-container{
+    overflow: scroll;
+    position: relative;
+    height: 600px;
+    width:90%;
+    margin:20px auto;
+    border: 1px solid rgba(81, 80, 80, 0.507);
+    z-index: 2;
+}
+canvas{
+    background-color: rgba(220, 221, 222, 0.159);
+    float: left;
+}
+.contents{
+    margin-right: 50px;
+}
+.contents-container{
+    margin-bottom: 10px;
+    display:flex;
+}
+._sticky{
+    position: sticky;
+    background-color: white;
+}
+.xlbel-container{
+    height: 50px;
+    top:0;
+    background-color: white;
+    z-index: 5;
+}
+.ylbel-container{
+    width:50px;
+    left:0;
+    background-color: white;
+    z-index: 5;
+}
+.label-contents{
+    position:absolute;
+    margin:0;
+    padding:0;
+}
+.canvas-wrapper{
+    position: absolute;
+    top:50px;
+    left:50px;
+}
+@media screen and (max-width: 599px) {
+    h3{
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+    .table-container{
+        height: 550px ;
+    }
+    .contents{
+        margin-right: 20px;
+    }
+    .contents-container{
+        position: relative;
+    }
+    .res-button{
+        margin-top: auto;
+    }
+}

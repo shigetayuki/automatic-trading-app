@@ -1,0 +1,46 @@
+<igx-snackbar #systemSnackbar></igx-snackbar>
+<h3>システム別取引結果照会</h3>
+<div class="contents-container">
+    <label class="contents">システム<app-drop-down [items]="codeList" [(model)]="systemId"></app-drop-down></label>
+    <app-button class="contents res-button" (click)="getMxListBySystems()">表示</app-button>
+</div>
+<div class="table-container"  *ngIf="tradeSystemResultList[0]!=undefined">
+    <table class="table table-hover">
+        <thead class="sticky-top bg-white">
+            <tr>
+                <th class="_sticky">年</th>
+                <th>1月</th>
+                <th>2月</th>
+                <th>3月</th>
+                <th>4月</th>
+                <th>5月</th>
+                <th>6月</th>
+                <th>7月</th>
+                <th>8月</th>
+                <th>9月</th>
+                <th>10月</th>
+                <th>11月</th>
+                <th>12月</th>
+                <th>合計</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tradeSystemResultList">
+                <td class="_sticky">{{item.year}}</td>
+                <td>{{item.interest01}}</td>
+                <td>{{item.interest02}}</td>
+                <td>{{item.interest03}}</td>
+                <td>{{item.interest04}}</td>
+                <td>{{item.interest05}}</td>
+                <td>{{item.interest06}}</td>
+                <td>{{item.interest07}}</td>
+                <td>{{item.interest08}}</td>
+                <td>{{item.interest09}}</td>
+                <td>{{item.interest10}}</td>
+                <td>{{item.interest11}}</td>
+                <td>{{item.interest12}}</td>
+                <td>{{item.total}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

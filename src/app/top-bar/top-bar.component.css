@@ -1,0 +1,125 @@
+header{
+    background-color: rgba(255, 255, 255);
+    color:rgb(1, 1, 1);
+    border-bottom:4px solid rgb(1, 1, 1);
+    padding:0 5%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 80px;
+    width:100%;
+    position: fixed; /* ウィンドウを基準に画面に固定 */
+    top: 0; /* 上下の固定位置を上から0pxにする */
+    left: 0; /* 左右の固定位置を左から0pxにする */
+    z-index: 10;
+}
+
+.top-bar-contents{
+    width: 50%;
+}
+.img-container{
+    display: flex;
+    align-items: center;
+    margin-right:10px;
+}
+.top-bar-left{
+    display: flex;
+    align-items: center;
+}
+.top-bar-left h2{
+    font-size: 25px;
+    margin:0
+}
+.top-bar-right{
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.top-bar-right a{
+    font-size: 10px;
+    width:25%;
+    height: 100%;
+    line-height: 80px;
+    cursor: pointer;
+}
+a:hover{
+    background-color: rgba(112, 109, 109, 0.155);
+}
+.aicon-frame{
+    display:none;
+    text-align: center;
+    height:60px;
+    width:50px;
+    margin:auto;
+}
+.aicon-bar{
+    border-radius:5px;
+    background-color:#000;
+    width:80%;
+    height:5px;
+    margin:15px auto;
+}
+.display-min{
+    position: fixed;
+    top:0;
+    right:0;
+    display: none;
+    z-index: 10;
+    width:80px;
+    height:80px;
+    margin:auto 0;
+    padding:0;
+    box-sizing: border-box;
+}
+.menu-modal-cantainer a{
+    display: none;
+}
+@media screen and (max-width: 599px) {
+    header{
+        padding:0 10%;
+        height: 80px;
+        border-bottom:2px solid rgb(1, 1, 1);
+    }
+    .top-bar-left{
+        width:60%;
+    }
+    .top-bar-left h2{
+        font-size: 18px;
+        margin:0;
+        padding:0;
+    }
+    .top-bar-right{
+        width:30%;
+    }
+    .img-container img{
+        width:18px;
+        height:18px;
+    }
+    
+    .display-min{
+        display:block;
+    }
+    .menu-modal-cantainer{
+        position:fixed;
+    	top:80px;
+    	right:0px;
+    	border:1px solid #FFF;
+    	border-right:0px;
+    	background-color:rgba(0, 0, 0, 0.823);
+        color: #FFF;
+        text-align: right;
+        font-size: 20px;
+        padding:10px 10px 0 10px;
+        z-index: 10;
+    }
+    .menu-modal-cantainer a{
+        display: inline-block;
+        margin-bottom:20px;
+        cursor: pointer;
+    }
+    .aicon-frame{
+        display:block;
+    }
+    .top-bar-right a{
+        display: none;
+    }
+}
