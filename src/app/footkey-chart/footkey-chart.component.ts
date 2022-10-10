@@ -13,7 +13,7 @@ import { MxService } from '../service/mx.service';
   templateUrl: './footkey-chart.component.html',
   styleUrls: ['./footkey-chart.component.css']
 })
-export class FootkeyChartComponent implements OnInit, AfterViewInit,AfterContentChecked,AfterViewChecked{
+export class FootkeyChartComponent implements OnInit, AfterViewInit,AfterViewChecked{
   @ViewChild('footkeyCanvas') footkeyCanvas!:ElementRef;
   @ViewChild('yearSnackbar') private yearSnackbar!:IgxSnackbarComponent;
   @ViewChild('systemSnackbar') private systemSnackbar!: IgxSnackbarComponent;
@@ -51,16 +51,8 @@ export class FootkeyChartComponent implements OnInit, AfterViewInit,AfterContent
     const canvas = this.footkeyCanvas.nativeElement as HTMLCanvasElement;
     this.context = canvas.getContext("2d");
   }
-  ngAfterContentChecked():void{
-    if(this.footkeyChart!==this.OldFootkeyChart){
-      this.drow();
-    }
-  }
   ngAfterViewChecked(): void {
-    if(this.footkeyChart!==this.OldFootkeyChart){
-        this.drow();
-        this.OldFootkeyChart = this.footkeyChart;
-      }
+    this.drow();
   }
   public getFootkeyChart(){
     let errorFlg = false;
