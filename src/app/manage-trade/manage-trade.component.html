@@ -1,0 +1,83 @@
+<igx-snackbar #messageSnackbar></igx-snackbar>
+<div *ngIf="getTradeState()" class="trade-status-container">
+    <div class="trade-status trade-status-on"></div><label class="trade-status-label">稼働中</label>
+    <app-button class="right-button" (click)="stop()">停止</app-button>
+</div>
+<div *ngIf="!getTradeState()" class="trade-status-container">
+    <div class="trade-status trade-status-off"></div><label class="trade-status-label">停止中</label>
+    <app-button class="right-button" (click)="start()">起動</app-button>
+</div>
+<h3>トレード状態マスタ</h3>
+<div *ngIf="manageTradeImp!=undefined">
+    <table class="table table-hover">
+        <thead class="bg-white">
+            <tr>
+                <th width="8%">システム</th>
+                <th width="8%">SQフラグ</th>
+                <th width="10%">直近注文月</th>
+                <th width="10%">シグナル</th>
+                <th width="10%">直近処理時刻</th>
+                <th width="10%">現在の枚数</th>
+                <th width="14%">次回からの枚数</th>
+                <th width="15%">現在の銘柄</th>
+                <th width="15%">次回からの銘柄</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>{{manageTradeImp.stateMst.systemName}}</th>
+                <th>{{manageTradeImp.stateMst.sqFlg}}</th>
+                <th>{{manageTradeImp.stateMst.prevOrderMonth}}</th>
+                <th>{{manageTradeImp.stateMst.signName}}</th>
+                <th>{{manageTradeImp.stateMst.prevTime}}</th>
+                <th>{{manageTradeImp.stateMst.settlementNumber}}</th>
+                <th>
+                    <input type="number" name="newNumber" class="form-control" id="newNumber"
+                        [(ngModel)]="manageTradeImp.stateMst.newNumber">
+                </th>
+                <th>{{manageTradeImp.stateMst.settlementInstrument}}</th>
+                <th>
+                    <app-drop-down [items]="manageTradeImp.instrumentDropDown"
+                        [(model)]="manageTradeImp.stateMst.newInstrument"></app-drop-down>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3>例外時間マスタ</h3>
+<div *ngIf="manageTradeImp!=undefined">
+
+    <table class="table table-hover">
+        <thead class="sticky-top bg-white">
+            <tr>
+                <th width="8%">削除</th>
+                <th width="8%">#</th>
+                <th width="10%">時間</th>
+                <th width="10%">例外時間区分</th>
+                <th width="10%">ＳＱ取引区分</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of manageTradeImp.exceptionalTimeMst;index as i" [ngClass]="getRowClass(i)">
+                <th><app-checkbox [(model)]="item.deleteFlg"></app-checkbox></th>
+                <th>{{i+1}}</th>
+                <th *ngIf="item.addRowFlg=='0'">{{item.time}}</th>
+                <th *ngIf="item.addRowFlg=='1'">
+                    <input type="text" name="time" class="form-control" [(ngModel)]="item.time">
+                </th>
+                <th>
+                    <app-drop-down [items]="manageTradeImp.exceptionalTimeDropDown"
+                        [(model)]="item.exceptionalTimeKbn"></app-drop-down>
+                </th>
+                <th>
+                    <app-drop-down [items]="manageTradeImp.sqTransactionDropDown"
+                        [(model)]="item.sqTransactionKbn"></app-drop-down>
+                </th>
+            </tr>
+        </tbody>
+    </table>
+    <app-button class="right-button" (click)="addRow()">追加</app-button>
+</div>
+<h3>操作</h3>
+<app-button class="right-button" (click)="update()">更新</app-button>

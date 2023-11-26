@@ -1,8 +1,8 @@
-
 <header>
     <div class="top-bar-contents top-bar-left">
         <div class="img-container">
-            <img src="../../assets/img/automatictrading_logo.png" width="30px" height="30px" alt="automatictrading" title="automatictrading">
+            <img src="../../assets/img/automatictrading_logo.png" width="30px" height="30px" alt="automatictrading"
+                title="automatictrading">
         </div>
         <h2>AutomaticTrading</h2>
     </div>
@@ -11,6 +11,7 @@
         <a (click)="changeTab('resultByMonths')">年月別結果</a>
         <a (click)="changeTab('resultBySystems')">システム別結果</a>
         <a (click)="changeTab('footkeyChart')">鍵足チャート</a>
+        <a (click)="changeTab('manageTrade')">トレード管理</a>
         <a (click)="changeTab('')">ログアウト</a>
     </div>
     <div #menuModalCantainer class="menu-modal-cantainer" style="display:none;" *ngIf="this.auth.isLoggedIn">
@@ -24,13 +25,18 @@
             <a (click)="changeTab('footkeyChart')">鍵足チャート照会</a>
         </div>
         <div>
+            <a (click)="changeTab('manageTrade')">トレード管理</a>
+        </div>
+        <div>
             <a (click)="changeTab('')">ログアウト</a>
         </div>
     </div>
 
     <div class="display-min" *ngIf="this.auth.isLoggedIn" (click)="openMenu()">
         <div class="aicon-frame">
-            <div class="aicon-bar"></div><div class="aicon-bar"></div><div class="aicon-bar"></div>
+            <div class="aicon-bar"></div>
+            <div class="aicon-bar"></div>
+            <div class="aicon-bar"></div>
         </div>
     </div>
 </header>

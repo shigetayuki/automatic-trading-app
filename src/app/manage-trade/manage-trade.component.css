@@ -1,0 +1,37 @@
+h3{
+    border-bottom: 1px solid rgb(212, 208, 208);
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    font-size: 15px;
+}
+.trade-status-container{
+    display: flex;
+    align-items: center;
+}
+.right-button{
+	display:block;
+    margin-left:auto;
+    text-align: right;
+}
+.trade-status{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin: 20px 50px;
+}
+.trade-status-on{
+    background:linear-gradient(to bottom right, rgb(200,255,200),lime);
+}
+.trade-status-off{
+    background: linear-gradient(to bottom right, rgb(255, 200, 200), red);
+}
+.trade-status-label{
+    font-size: 20px;
+}
+.delete-row{
+    background-color: rgba(105, 105, 105, 0.5);
+}
+th{
+    height: 45px;
+}

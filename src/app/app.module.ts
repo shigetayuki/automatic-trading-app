@@ -9,7 +9,11 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { FormsModule } from '@angular/forms';
 import { ResultByMonthsComponent } from './result-by-months/result-by-months.component';
 import { DropDownComponent } from './drop-down/drop-down.component';
-import { IgxDropDownModule, IgxButtonModule, IgxToggleModule } from "igniteui-angular";
+import {
+  IgxDropDownModule,
+  IgxButtonModule,
+  IgxToggleModule,
+} from 'igniteui-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ResultBySystemsComponent } from './result-by-systems/result-by-systems.component';
 import { TabComponent } from './tab/tab.component';
@@ -17,6 +21,8 @@ import { ButtonComponent } from './button/button.component';
 import { IgxSnackbarModule } from 'igniteui-angular';
 import { FootkeyChartComponent } from './footkey-chart/footkey-chart.component';
 import { TrendSvgComponent } from './trend-svg/trend-svg.component';
+import { ManageTradeComponent } from './manage-trade/manage-trade.component';
+import { CheckboxComponent } from './checkbox/checkbox.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +36,8 @@ import { TrendSvgComponent } from './trend-svg/trend-svg.component';
     ButtonComponent,
     FootkeyChartComponent,
     TrendSvgComponent,
+    ManageTradeComponent,
+    CheckboxComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +48,9 @@ import { TrendSvgComponent } from './trend-svg/trend-svg.component';
     IgxButtonModule,
     IgxToggleModule,
     IgxSnackbarModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}
